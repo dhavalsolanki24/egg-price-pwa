@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Egg Price Tracker</title>
+
+<link rel="manifest" href="manifest.json">
+
+<style>
+body{
+font-family:Arial;
+padding:20px;
+}
+
+table{
+border-collapse:collapse;
+width:100%;
+}
+
+td,th{
+border:1px solid #ccc;
+padding:8px;
+}
+</style>
+
+</head>
+
+<body>
+
+<h2>Egg Price Tracker</h2>
+
+<select id="city">
+<option value="surat">Surat</option>
+<option value="mumbai">Mumbai</option>
+<option value="baroda">Baroda</option>
+</select>
+
+<table id="priceTable">
+<tr>
+<th>Date</th>
+<th>Price</th>
+</tr>
+</table>
+
+<script src="app.js"></script>
+
+</body>
+</html>

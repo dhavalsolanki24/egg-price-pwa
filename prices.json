@@ -1,0 +1,17 @@
+{
+"surat":[
+{"date":"13 Mar","price":4.70},
+{"date":"12 Mar","price":4.65},
+{"date":"11 Mar","price":4.60},
+{"date":"10 Mar","price":4.60},
+{"date":"09 Mar","price":4.55}
+],
+
+"mumbai":[
+{"date":"13 Mar","price":4.86},
+{"date":"12 Mar","price":4.80},
+{"date":"11 Mar","price":4.75},
+{"date":"10 Mar","price":4.70},
+{"date":"09 Mar","price":4.70}
+]
+}
