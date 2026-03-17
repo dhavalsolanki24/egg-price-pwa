@@ -2,7 +2,7 @@ const table = document.getElementById("priceTable");
 
 async function loadPrices() {
 
-    let res = await fetch("prices.json");
+    let res = await fetch(`prices.json?t=${new Date().getTime()}`)
     let data = await res.json();
 
     const cities = ["ahmedabad", "surat", "mumbai", "delhi"];
