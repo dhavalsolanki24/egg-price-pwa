@@ -21,7 +21,46 @@ td,th{
 border:1px solid #ccc;
 padding:8px;
 }
+
+body {
+    font-family: Arial;
+    padding: 20px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 10px;
+}
+
+th {
+    background-color: #737773;
+    color: white;
+    padding: 10px;
+}
+
+td {
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+    font-size: 14px;
+}
+
+tr:hover {
+    background-color: #f5f5f5;
+}
+
+.up {
+    color: red;
+    font-weight: bold;
+}
+
+.down {
+    color: green;
+    font-weight: bold;
+}
 </style>
+
 
 </head>
 
@@ -29,11 +68,12 @@ padding:8px;
 
 <h2>Egg Price Tracker</h2>
 
-<select id="city">
-<option value="surat">Surat</option>
-<option value="mumbai">Mumbai</option>
-<option value="baroda">Baroda</option>
-</select>
+<!-- <select id="city">
+    <option value="ahmedabad">Ahmedabad</option>
+    <option value="surat">Surat</option>
+    <option value="mumbai">Mumbai</option>
+    <option value="delhi">Delhi</option>
+</select> -->
 
 <table id="priceTable">
 <tr>
