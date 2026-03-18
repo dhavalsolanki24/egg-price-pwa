@@ -2,21 +2,42 @@ const table = document.getElementById("priceTable");
 
 async function loadPrices() {
 
-    let res = await fetch(`prices.json?t=${new Date().getTime()}`)
+    let res = await fetch(`prices.json?t=${Date.now()}`);
     let data = await res.json();
 
     const cities = ["ahmedabad", "surat", "mumbai", "delhi"];
 
-    let validDates = data["ahmedabad"]
-        .filter(item => item.price && item.price !== "-" && item.price !== "NaN")
-        .map(item => item.date);
+    // Collect ALL dates from all cities
+    // Collect valid dates (at least one city has data)
+let validDates = [];
 
-    validDates.sort((a, b) => a - b);
+let allDatesSet = new Set();
 
-    let lastDates = validDates.slice(-6);
+cities.forEach(city => {
+    data[city].forEach(item => {
+        allDatesSet.add(item.date);
+    });
+});
 
+let allDates = Array.from(allDatesSet).sort((a, b) => a - b);
+
+// Filter valid days
+validDates = allDates.filter(day => {
+
+    return cities.some(city => {
+        let d = data[city].find(x => x.date === day);
+        return d && d.price && d.price !== "-" && d.price !== "NaN";
+    });
+
+});
+
+// Take last 5 VALID days
+let lastDates = validDates.slice(-8);
+
+    // Clear table
     table.innerHTML = "";
 
+    // Header
     let header = table.insertRow();
     header.innerHTML = `
         <th>Date</th>
@@ -27,6 +48,7 @@ async function loadPrices() {
     `;
 
     const month = new Date().toLocaleString('default', { month: 'short' });
+    const curr_date = new Date().getDate();
 
     lastDates.forEach((day, index) => {
         if (day === 32) return; // Skip invalid date
@@ -40,42 +62,41 @@ async function loadPrices() {
 
             let cityData = data[city].find(d => d.date === day);
             let prevDay = lastDates[index - 1];
-
             let prevData = data[city].find(d => d.date === prevDay);
 
             let cell = row.insertCell(-1);
 
-            if (cityData && cityData.price && cityData.price !== "NaN") {
-
-                //let price = parseFloat(cityData.price) / 100;
-                let price = cityData.price;
-
-                let display = price;
-
-                // Compare with previous day
-                if (prevData && prevData.price) {
-
-                    //let prevPrice = parseFloat(prevData.price) / 100;
-                    let prevPrice = prevData.price;
-
-                    if (price > prevPrice) {
-                        cell.innerHTML = `${display}`;
-                        cell.className = "up";
-                    }
-                    else if (price < prevPrice) {
-                        cell.innerHTML = `${display}`;
-                        cell.className = "down";
-                    }
-                    else {
-                        cell.innerHTML = `${display}`;
-                    }
-
-                } else {
-                    cell.innerText = display;
-                }
-
-            } else {
+            // ❌ No data or '-'
+            if (!cityData || cityData.price === "-" || cityData.price === "NaN") {
                 cell.innerText = "-";
+                return;
+            }
+
+            let price = cityData.price;
+            let display = price;
+
+            // If previous data missing → no trend
+            if (!prevData || prevData.price === "-" || prevData.price === "NaN") {
+                cell.innerText = display;
+                return;
+            }
+
+            let prevPrice = prevData.price;
+
+            if (price > prevPrice) {
+                cell.innerHTML = `${display}`;
+                cell.className = "down";
+            }
+            else if (price < prevPrice) {
+                cell.innerHTML = `${display}`;
+                cell.className = "up";
+            }
+            else {
+                cell.innerHTML = `${display}`;
+            }
+
+            if(day === curr_date) {
+                row.className = "bold-row";
             }
 
         });
