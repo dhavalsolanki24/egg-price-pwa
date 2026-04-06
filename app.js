@@ -49,9 +49,10 @@ let lastDates = validDates.slice(-8);
 
     const month = new Date().toLocaleString('default', { month: 'short' });
     const curr_date = new Date().getDate();
+    const daysInCurrentMonth = new Date(new Date().getFullYear(), new Date().getMonth() + 1, 0).getDate();
 
     lastDates.forEach((day, index) => {
-        if (day === 32) return; // Skip invalid date
+        if (day > daysInCurrentMonth) return; // Skip invalid date
 
         let row = table.insertRow();
 
