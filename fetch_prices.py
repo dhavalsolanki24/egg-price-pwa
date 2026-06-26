@@ -1,9 +1,11 @@
 import requests
 import json
 from datetime import datetime
+from zoneinfo import ZoneInfo
 from lxml import html
 import traceback
 import pytz
+
 
 ist = pytz.timezone("Asia/Kolkata")
 hour = datetime.now(ist).hour
@@ -49,7 +51,12 @@ if table is not None:
                         print("error: {}, index: {}".format(e, k))
                         traceback.print_exc()
             output[city] = price_list
-    
+
+    output["_metadata"] = {
+        "updated_at": datetime.now(
+            ZoneInfo("Asia/Kolkata")
+            ).strftime("%d-%b-%Y %I:%M:%S %p")
+        }
     with open("prices.json", "w") as f:
         json.dump(output, f, indent=2)
     
