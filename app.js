@@ -5,6 +5,16 @@ async function loadPrices() {
     let res = await fetch(`prices.json?t=${Date.now()}`);
     let data = await res.json();
 
+    const lastUpdated = document.getElementById("lastUpdated");
+
+    if (data._metadata && data._metadata.updated_at) {
+        lastUpdated.innerText =
+            "Last updated: " + data._metadata.updated_at;
+    } else {
+        lastUpdated.innerText =
+            "Last updated: Unknown";
+    }
+
     const cities = ["ahmedabad", "surat", "mumbai", "delhi"];
 
     // Collect ALL dates from all cities
