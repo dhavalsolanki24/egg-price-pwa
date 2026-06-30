@@ -10,7 +10,7 @@ import pytz
 ist = pytz.timezone("Asia/Kolkata")
 hour = datetime.now(ist).hour
 
-if hour < 6 or hour > 10:
+if hour < 6 or hour > 12:
     exit()
 
 URL = "https://www.e2necc.com/home/eggprice"
