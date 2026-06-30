@@ -118,11 +118,11 @@
     },
     {
       "date": 30,
-      "price": "-"
+      "price": "675"
     },
     {
       "date": 31,
-      "price": "614.66"
+      "price": "616.67"
     }
   ],
   "delhi": [
@@ -244,11 +244,11 @@
     },
     {
       "date": 30,
-      "price": "-"
+      "price": "640"
     },
     {
       "date": 31,
-      "price": "597.79"
+      "price": "599.20"
     }
   ],
   "mumbai": [
@@ -370,11 +370,11 @@
     },
     {
       "date": 30,
-      "price": "-"
+      "price": "720"
     },
     {
       "date": 31,
-      "price": "671.90"
+      "price": "673.50"
     }
   ],
   "surat": [
@@ -496,14 +496,14 @@
     },
     {
       "date": 30,
-      "price": "-"
+      "price": "700"
     },
     {
       "date": 31,
-      "price": "639.14"
+      "price": "641.17"
     }
   ],
   "_metadata": {
-    "updated_at": "29-Jun-2026 09:43:20 AM"
+    "updated_at": "30-Jun-2026 09:25:35 AM"
   }
 }
