@@ -2,508 +2,524 @@
   "ahmedabad": [
     {
       "date": 1,
-      "price": "575"
+      "price": "675"
     },
     {
       "date": 2,
-      "price": "575"
+      "price": "-"
     },
     {
       "date": 3,
-      "price": "575"
+      "price": "-"
     },
     {
       "date": 4,
-      "price": "575"
+      "price": "-"
     },
     {
       "date": 5,
-      "price": "575"
+      "price": "-"
     },
     {
       "date": 6,
-      "price": "575"
+      "price": "-"
     },
     {
       "date": 7,
-      "price": "580"
+      "price": "-"
     },
     {
       "date": 8,
-      "price": "580"
+      "price": "-"
     },
     {
       "date": 9,
-      "price": "580"
+      "price": "-"
     },
     {
       "date": 10,
-      "price": "585"
+      "price": "-"
     },
     {
       "date": 11,
-      "price": "590"
+      "price": "-"
     },
     {
       "date": 12,
-      "price": "595"
+      "price": "-"
     },
     {
       "date": 13,
-      "price": "610"
+      "price": "-"
     },
     {
       "date": 14,
-      "price": "620"
+      "price": "-"
     },
     {
       "date": 15,
-      "price": "620"
+      "price": "-"
     },
     {
       "date": 16,
-      "price": "620"
+      "price": "-"
     },
     {
       "date": 17,
-      "price": "620"
+      "price": "-"
     },
     {
       "date": 18,
-      "price": "620"
+      "price": "-"
     },
     {
       "date": 19,
-      "price": "630"
+      "price": "-"
     },
     {
       "date": 20,
-      "price": "640"
+      "price": "-"
     },
     {
       "date": 21,
-      "price": "640"
+      "price": "-"
     },
     {
       "date": 22,
-      "price": "640"
+      "price": "-"
     },
     {
       "date": 23,
-      "price": "640"
+      "price": "-"
     },
     {
       "date": 24,
-      "price": "645"
+      "price": "-"
     },
     {
       "date": 25,
-      "price": "655"
+      "price": "-"
     },
     {
       "date": 26,
-      "price": "660"
+      "price": "-"
     },
     {
       "date": 27,
-      "price": "660"
+      "price": "-"
     },
     {
       "date": 28,
-      "price": "670"
+      "price": "-"
     },
     {
       "date": 29,
-      "price": "675"
+      "price": "-"
     },
     {
       "date": 30,
-      "price": "675"
+      "price": "-"
     },
     {
       "date": 31,
-      "price": "616.67"
+      "price": "-"
+    },
+    {
+      "date": 32,
+      "price": "675.00"
     }
   ],
   "delhi": [
     {
       "date": 1,
-      "price": "545"
+      "price": "640"
     },
     {
       "date": 2,
-      "price": "545"
+      "price": "-"
     },
     {
       "date": 3,
-      "price": "545"
+      "price": "-"
     },
     {
       "date": 4,
-      "price": "545"
+      "price": "-"
     },
     {
       "date": 5,
-      "price": "555"
+      "price": "-"
     },
     {
       "date": 6,
-      "price": "555"
+      "price": "-"
     },
     {
       "date": 7,
-      "price": "555"
+      "price": "-"
     },
     {
       "date": 8,
-      "price": "555"
+      "price": "-"
     },
     {
       "date": 9,
-      "price": "565"
+      "price": "-"
     },
     {
       "date": 10,
-      "price": "570"
+      "price": "-"
     },
     {
       "date": 11,
-      "price": "570"
+      "price": "-"
     },
     {
       "date": 12,
-      "price": "585"
+      "price": "-"
     },
     {
       "date": 13,
-      "price": "601"
+      "price": "-"
     },
     {
       "date": 14,
-      "price": "620"
+      "price": "-"
     },
     {
       "date": 15,
-      "price": "620"
+      "price": "-"
     },
     {
       "date": 16,
-      "price": "620"
+      "price": "-"
     },
     {
       "date": 17,
-      "price": "620"
+      "price": "-"
     },
     {
       "date": 18,
-      "price": "620"
+      "price": "-"
     },
     {
       "date": 19,
-      "price": "620"
+      "price": "-"
     },
     {
       "date": 20,
-      "price": "625"
+      "price": "-"
     },
     {
       "date": 21,
-      "price": "625"
+      "price": "-"
     },
     {
       "date": 22,
-      "price": "625"
+      "price": "-"
     },
     {
       "date": 23,
-      "price": "625"
+      "price": "-"
     },
     {
       "date": 24,
-      "price": "625"
+      "price": "-"
     },
     {
       "date": 25,
-      "price": "640"
+      "price": "-"
     },
     {
       "date": 26,
-      "price": "640"
+      "price": "-"
     },
     {
       "date": 27,
-      "price": "640"
+      "price": "-"
     },
     {
       "date": 28,
-      "price": "640"
+      "price": "-"
     },
     {
       "date": 29,
-      "price": "640"
+      "price": "-"
     },
     {
       "date": 30,
-      "price": "640"
+      "price": "-"
     },
     {
       "date": 31,
-      "price": "599.20"
+      "price": "-"
+    },
+    {
+      "date": 32,
+      "price": "640.00"
     }
   ],
   "mumbai": [
     {
       "date": 1,
-      "price": "620"
+      "price": "720"
     },
     {
       "date": 2,
-      "price": "620"
+      "price": "-"
     },
     {
       "date": 3,
-      "price": "620"
+      "price": "-"
     },
     {
       "date": 4,
-      "price": "620"
+      "price": "-"
     },
     {
       "date": 5,
-      "price": "620"
+      "price": "-"
     },
     {
       "date": 6,
-      "price": "620"
+      "price": "-"
     },
     {
       "date": 7,
-      "price": "625"
+      "price": "-"
     },
     {
       "date": 8,
-      "price": "630"
+      "price": "-"
     },
     {
       "date": 9,
-      "price": "635"
+      "price": "-"
     },
     {
       "date": 10,
-      "price": "640"
+      "price": "-"
     },
     {
       "date": 11,
-      "price": "645"
+      "price": "-"
     },
     {
       "date": 12,
-      "price": "650"
+      "price": "-"
     },
     {
       "date": 13,
-      "price": "660"
+      "price": "-"
     },
     {
       "date": 14,
-      "price": "670"
+      "price": "-"
     },
     {
       "date": 15,
-      "price": "680"
+      "price": "-"
     },
     {
       "date": 16,
-      "price": "690"
+      "price": "-"
     },
     {
       "date": 17,
-      "price": "700"
+      "price": "-"
     },
     {
       "date": 18,
-      "price": "705"
+      "price": "-"
     },
     {
       "date": 19,
-      "price": "710"
+      "price": "-"
     },
     {
       "date": 20,
-      "price": "710"
+      "price": "-"
     },
     {
       "date": 21,
-      "price": "710"
+      "price": "-"
     },
     {
       "date": 22,
-      "price": "710"
+      "price": "-"
     },
     {
       "date": 23,
-      "price": "710"
+      "price": "-"
     },
     {
       "date": 24,
-      "price": "710"
+      "price": "-"
     },
     {
       "date": 25,
-      "price": "710"
+      "price": "-"
     },
     {
       "date": 26,
-      "price": "710"
+      "price": "-"
     },
     {
       "date": 27,
-      "price": "715"
+      "price": "-"
     },
     {
       "date": 28,
-      "price": "720"
+      "price": "-"
     },
     {
       "date": 29,
-      "price": "720"
+      "price": "-"
     },
     {
       "date": 30,
-      "price": "720"
+      "price": "-"
     },
     {
       "date": 31,
-      "price": "673.50"
+      "price": "-"
+    },
+    {
+      "date": 32,
+      "price": "720.00"
     }
   ],
   "surat": [
     {
       "date": 1,
-      "price": "595"
+      "price": "700"
     },
     {
       "date": 2,
-      "price": "600"
+      "price": "-"
     },
     {
       "date": 3,
-      "price": "600"
+      "price": "-"
     },
     {
       "date": 4,
-      "price": "600"
+      "price": "-"
     },
     {
       "date": 5,
-      "price": "600"
+      "price": "-"
     },
     {
       "date": 6,
-      "price": "600"
+      "price": "-"
     },
     {
       "date": 7,
-      "price": "605"
+      "price": "-"
     },
     {
       "date": 8,
-      "price": "605"
+      "price": "-"
     },
     {
       "date": 9,
-      "price": "605"
+      "price": "-"
     },
     {
       "date": 10,
-      "price": "610"
+      "price": "-"
     },
     {
       "date": 11,
-      "price": "610"
+      "price": "-"
     },
     {
       "date": 12,
-      "price": "615"
+      "price": "-"
     },
     {
       "date": 13,
-      "price": "625"
+      "price": "-"
     },
     {
       "date": 14,
-      "price": "635"
+      "price": "-"
     },
     {
       "date": 15,
-      "price": "645"
+      "price": "-"
     },
     {
       "date": 16,
-      "price": "650"
+      "price": "-"
     },
     {
       "date": 17,
-      "price": "650"
+      "price": "-"
     },
     {
       "date": 18,
-      "price": "655"
+      "price": "-"
     },
     {
       "date": 19,
-      "price": "660"
+      "price": "-"
     },
     {
       "date": 20,
-      "price": "665"
+      "price": "-"
     },
     {
       "date": 21,
-      "price": "665"
+      "price": "-"
     },
     {
       "date": 22,
-      "price": "665"
+      "price": "-"
     },
     {
       "date": 23,
-      "price": "665"
+      "price": "-"
     },
     {
       "date": 24,
-      "price": "665"
+      "price": "-"
     },
     {
       "date": 25,
-      "price": "675"
+      "price": "-"
     },
     {
       "date": 26,
-      "price": "680"
+      "price": "-"
     },
     {
       "date": 27,
-      "price": "690"
+      "price": "-"
     },
     {
       "date": 28,
-      "price": "700"
+      "price": "-"
     },
     {
       "date": 29,
-      "price": "700"
+      "price": "-"
     },
     {
       "date": 30,
-      "price": "700"
+      "price": "-"
     },
     {
       "date": 31,
-      "price": "641.17"
+      "price": "-"
+    },
+    {
+      "date": 32,
+      "price": "700.00"
     }
   ],
   "_metadata": {
-    "updated_at": "30-Jun-2026 09:25:35 AM"
+    "updated_at": "01-Jul-2026 09:40:11 AM"
   }
 }
