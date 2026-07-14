@@ -53,6 +53,7 @@ if table is not None:
             output[city] = price_list
 
     output["_metadata"] = {
+        "source": "NECC",
         "updated_at": datetime.now(
             ZoneInfo("Asia/Kolkata")
             ).strftime("%d-%b-%Y %I:%M:%S %p")
