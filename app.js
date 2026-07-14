@@ -288,6 +288,8 @@ paper.addEventListener("touchend", function (e) {
     if (e.changedTouches.length !== 1)
         return;
     touchEndX = e.changedTouches[0].screenX;
+    paper.style.transition = "transform .25s ease";
+    paper.style.transform = "translateX(0)";
     handleSwipe();
 }, { passive: true });
 
@@ -299,9 +301,8 @@ paper.addEventListener("touchmove", function(e){
     dragging = true;
     const currentX = e.touches[0].screenX;
     const delta = currentX-touchStartX;
-    // paper.style.transition="none";
-    paper.style.transition="transform .25s ease";    
-    paper.style.transform=`translateX(${delta}px)`;
+    paper.style.transition = "none";
+    paper.style.transform = `translateX(${delta}px)`;
     //paper.style.transform="translateX(0)";
     
 },{passive:true});
