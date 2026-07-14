@@ -181,16 +181,17 @@ tr.bold-row {
 }
 
 .paper-viewer{
+    width:100%;
     overflow:hidden;
     position:relative;
+    border-radius:10px;
 }
 
 #newspaperImage{
+    display:block;
     width:100%;
-    transition:
-        transform .25s ease,
-        opacity .25s ease;
     will-change:transform;
+    touch-action:pan-y;
 }
 
 /* ===========================
