@@ -1,5 +1,19 @@
+// ==============================
+// Egg Price Variables
+// ==============================
 const table = document.getElementById("priceTable");
 
+// ==============================
+// Newspaper Variables
+// ==============================
+let newspaperData = null;
+let currentPage = 0;
+
+const SWIPE_THRESHOLD = 60; // pixels
+
+// ==============================
+// Egg Price Functions
+// ==============================
 async function loadPrices() {
 
     let res = await fetch(`prices.json?t=${Date.now()}`);
@@ -8,10 +22,10 @@ async function loadPrices() {
     const lastUpdated = document.getElementById("lastUpdated");
 
     if (data._metadata && data._metadata.updated_at) {
-        lastUpdated.innerText =
-            "Last updated: " + data._metadata.updated_at;
+        lastUpdated.innerHTML =
+            "Last updated: " + "<b>"+data._metadata.updated_at+"</b>";
     } else {
-        lastUpdated.innerText =
+        lastUpdated.innerHTML =
             "Last updated: Unknown";
     }
 
@@ -105,15 +119,189 @@ let lastDates = validDates.slice(-8);
             else {
                 cell.innerHTML = `${display}`;
             }
-
             if(day === curr_date) {
                 row.className = "bold-row";
             }
-
         });
 
     });
 
 }
 
+// ==============================
+// Newspaper Functions
+// ==============================
+
+async function loadNewspaper(){
+    try{
+        const response =
+            await fetch(`newspaper.json?t=${Date.now()}`);
+
+        const data = await response.json();
+
+        if(data.pages.length){
+            // document.getElementById("newspaperImage").src =
+            //     data.pages[1].image;
+            newspaperData = data;
+            showPage(0);
+        }
+        document.getElementById("paperEdition").innerText =
+            data._metadata.edition;
+
+        document.getElementById("paperUpdated").innerHTML =
+            "Updated: " + "<b>"+data._metadata.updated_at+"</b>";
+
+        newspaperData = data;
+        showPage(0);
+    }
+    catch(e){
+        console.log(e);
+    }
+}
+
+function showPage(index){
+    if(!newspaperData) return;
+
+    const pages = newspaperData.pages;
+    currentPage = index;
+
+    // document.getElementById("newspaperImage").src =
+    //     pages[index].image;
+
+    // const image = document.getElementById("newspaperImage");
+    // image.style.opacity = "0.3";
+    // image.src = pages[index].image;
+    // image.onload = () => {
+    //     image.style.opacity = "1";
+    // };
+
+    const image = document.getElementById("newspaperImage");
+    const loader = document.getElementById("paperLoader");
+    loader.style.display = "block";
+
+    const temp = new Image();
+    temp.onload = function(){
+        image.src = temp.src;
+        loader.style.display = "none";
+    };
+    temp.src = newspaperData.pages[index].image;
+
+    document.getElementById("pageNumber").innerText =
+        `${index+1} / ${pages.length}`;
+
+    document.getElementById("prevBtn").disabled =
+        index===0;
+
+    document.getElementById("nextBtn").disabled =
+        index===pages.length-1;
+
+    // Preload previous and next pages
+    //preloadPage(index - 1);
+    preloadPage(index + 1);
+}
+
+// function showPage(index){
+//     const image = document.getElementById("newspaperImage");
+//     const loader = document.getElementById("paperLoader");
+//     loader.style.display = "block";
+
+//     const temp = new Image();
+
+//     temp.onload = function(){
+//         image.src = temp.src;
+//         loader.style.display = "none";
+//     };
+
+//     temp.src = newspaperData.pages[index].image;
+// }
+
+
+function preloadPage(index) {
+    if (!newspaperData) return;
+
+    if (index < 0 || index >= newspaperData.pages.length)
+        return;
+
+    const img = new Image();
+    img.src = newspaperData.pages[index].image;
+}
+
+// ==============================
+// swipe button handlers
+// ==============================
+function handleSwipe() {
+    const diff = touchEndX - touchStartX;
+    // Swipe Right (Previous)
+    if (diff > SWIPE_THRESHOLD) {
+        if (currentPage > 0) {
+            showPage(currentPage - 1);
+        }
+    }
+    // Swipe Left (Next)
+    else if (diff < -SWIPE_THRESHOLD) {
+        if (currentPage < newspaperData.pages.length - 1) {
+            showPage(currentPage + 1);
+        }
+    }
+}
+
+
+// ==============================
+// Button Events   <-- Step 5 goes here
+// ==============================
+document.getElementById("prevBtn").onclick = () => {
+
+    if (currentPage > 0) {
+        showPage(currentPage - 1);
+    }
+
+};
+
+document.getElementById("nextBtn").onclick = () => {
+
+    if (currentPage < newspaperData.pages.length - 1) {
+        showPage(currentPage + 1);
+    }
+
+};
+
+
+// ==============================
+// App Start
+// ==============================
 loadPrices();
+loadNewspaper();
+
+
+// ==============================
+// swipe events
+// ==============================
+const paper = document.getElementById("newspaperImage");
+
+paper.addEventListener("touchstart", function (e) {
+    if (e.touches.length !== 1)
+        return;
+    touchStartX = e.touches[0].screenX;
+}, { passive: true });
+
+paper.addEventListener("touchend", function (e) {
+    if (e.changedTouches.length !== 1)
+        return;
+    touchEndX = e.changedTouches[0].screenX;
+    handleSwipe();
+}, { passive: true });
+
+
+let dragging = false;
+paper.addEventListener("touchmove", function(e){
+    if(e.touches.length!==1)
+        return;
+    dragging = true;
+    const currentX = e.touches[0].screenX;
+    const delta = currentX-touchStartX;
+    // paper.style.transition="none";
+    paper.style.transition="transform .25s ease";    
+    //paper.style.transform=`translateX(${delta}px)`;
+    paper.style.transform="translateX(0)";
+    
+},{passive:true});
