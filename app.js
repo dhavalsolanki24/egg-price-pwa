@@ -301,7 +301,7 @@ paper.addEventListener("touchmove", function(e){
     const delta = currentX-touchStartX;
     // paper.style.transition="none";
     paper.style.transition="transform .25s ease";    
-    //paper.style.transform=`translateX(${delta}px)`;
-    paper.style.transform="translateX(0)";
+    paper.style.transform=`translateX(${delta}px)`;
+    //paper.style.transform="translateX(0)";
     
 },{passive:true});
