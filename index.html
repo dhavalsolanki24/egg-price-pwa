@@ -106,16 +106,142 @@ tr.bold-row {
 
 /* Mobile tweaks */
 @media (max-width: 600px) {
-
     .title {
         font-size: 16px;
     }
-
     th, td {
         padding: 5px;
         font-size: 14px;
     }
+}
 
+/* Newspaper Card */
+.newspaper-card{
+    margin-top:20px;
+}
+
+.paper-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:10px;
+}
+
+.paper-title{
+    font-size:18px;
+    font-weight:600;
+}
+
+#paperEdition{
+    color:#777;
+    font-size:13px;
+}
+
+.paper-container{
+    text-align:center;
+}
+
+.paper-container img{
+    width:100%;
+    border-radius:10px;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.paper-container img:hover{
+    transform:scale(1.01);
+}
+
+#newspaperImage{
+    transition: opacity .25s ease;
+}
+
+
+/* Paper loader */
+.paper-loader{
+    display:none;
+    text-align:center;
+    padding:25px;
+}
+
+.spinner{
+    width:32px;
+    height:32px;
+    border:4px solid #ddd;
+    border-top:4px solid #2e7d32;
+    border-radius:50%;
+    animation:spin .8s linear infinite;
+    margin:auto;
+}
+
+@keyframes spin{
+    to{
+        transform:rotate(360deg);
+    }
+}
+
+.paper-viewer{
+    overflow:hidden;
+    position:relative;
+}
+
+#newspaperImage{
+    width:100%;
+    transition:
+        transform .25s ease,
+        opacity .25s ease;
+    will-change:transform;
+}
+
+/* ===========================
+   Newspaper Navigation
+=========================== */
+
+.paper-navigation{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-top:16px;
+    gap:12px;
+}
+
+.page-btn{
+    flex:1;
+    background:#2e7d32;
+    color:#fff;
+    border:none;
+    border-radius:10px;
+    padding:10px 14px;
+    font-size:15px;
+    font-weight:600;
+    cursor:pointer;
+    transition:all .2s ease;
+    box-shadow:0 2px 6px rgba(0,0,0,.15);
+}
+
+.page-btn:hover{
+    background:#256628;
+    transform:translateY(-1px);
+}
+
+.page-btn:active{
+    transform:scale(.97);
+}
+
+.page-btn:disabled{
+    background:#cfcfcf;
+    color:#777;
+    cursor:not-allowed;
+    box-shadow:none;
+    transform:none;
+}
+
+.page-counter{
+    min-width:70px;
+    text-align:center;
+    font-size:15px;
+    font-weight:600;
+    color:#555;
 }
 
 </style>
@@ -126,7 +252,7 @@ tr.bold-row {
 <div class="container">
 
     <div class="header">
-        <div class="title">🥚 Egg Price</div>
+        <div class="title">🥚 Egg Price (NECC)</div>
         <div class="updated" id="lastUpdated">Updating...</div>
     </div>
 
@@ -135,7 +261,37 @@ tr.bold-row {
             <table id="priceTable"></table>
         </div>
     </div>
+    <div class="card newspaper-card">
+        <div class="paper-header">
+            <span class="paper-title">📰 Newspaper (Sandesh)</span>
+        </div>
 
+        <div class="paper-info">
+            <span id="paperEdition"></span>
+            <span id="paperUpdated" class="updated"></span>
+        </div>
+        <div class="paper-container">
+           <div id="paperLoader" class="paper-loader">
+                <div class="spinner"></div>
+            </div>
+            <div class="paper-viewer">
+                <img
+                    id="newspaperImage"
+                    alt="Today's Newspaper"
+                    loading="lazy">
+            </div>
+
+            <div class="paper-navigation">
+                <button id="prevBtn" class="page-btn">
+                    ◀
+                </button>
+                <span id="pageNumber" class="page-counter"></span>
+                <button id="nextBtn" class="page-btn">
+                    ▶
+                </button>
+            </div>
+        </div>
+    </div>
 </div>
 
 <script src="app.js"></script>
