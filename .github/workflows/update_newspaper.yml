@@ -3,7 +3,8 @@ name: Update Newspaper
 on:
 
   schedule:
-    - cron: '45 0 * * *'      # 6:15 AM IST
+    - cron: '30 23 * * *'   # 5:00 AM IST
+    - cron: '30 0 * * *'    # 6:00 AM IST
 
   workflow_dispatch:
 
