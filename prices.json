@@ -342,7 +342,7 @@
     },
     {
       "date": 21,
-      "price": "-"
+      "price": "765"
     },
     {
       "date": 22,
@@ -386,7 +386,7 @@
     },
     {
       "date": 32,
-      "price": "737.50"
+      "price": "738.81"
     }
   ],
   "surat": [
@@ -521,6 +521,6 @@
   ],
   "_metadata": {
     "source": "NECC",
-    "updated_at": "20-Jul-2026 12:04:41 PM"
+    "updated_at": "21-Jul-2026 08:23:13 AM"
   }
 }
