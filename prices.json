@@ -220,7 +220,7 @@
     },
     {
       "date": 23,
-      "price": "-"
+      "price": "670"
     },
     {
       "date": 24,
@@ -256,7 +256,7 @@
     },
     {
       "date": 32,
-      "price": "697.05"
+      "price": "695.87"
     }
   ],
   "mumbai": [
@@ -521,6 +521,6 @@
   ],
   "_metadata": {
     "source": "NECC",
-    "updated_at": "23-Jul-2026 08:27:31 AM"
+    "updated_at": "23-Jul-2026 11:37:22 AM"
   }
 }
